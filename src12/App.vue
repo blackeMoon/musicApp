@@ -9,10 +9,10 @@
           <router-view 
             @get-player-id="getPlayerId"
             @get-play-all-id="getPlayAllId"
-            ></router-view>
+          ></router-view>
 
           <!-- 播放音乐 -->
-          <player @get-player-id="getPlayerId" v-show="playerId" :player-id="playerId" :list-id="listId"></player>
+          <player :player-id="playerId" :list-id="listId" @get-player-id="getPlayerId" v-show="playerId"></player>
         
 
       </div>
@@ -34,11 +34,11 @@ import player from "./components/base/player.vue"
         player
       },
       created(){
-        // console.log(this)
+        console.log(this)
       },
       methods:{
         getPlayerId(id){
-          // console.log("歌曲id：",id);
+          console.log("歌曲id：",id);
           this.playerId = id;
         },
         getPlayAllId(id){
